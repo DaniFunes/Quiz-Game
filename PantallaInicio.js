@@ -2,7 +2,6 @@ class PantallaInicio {
     constructor() {
         this.creaElementos();
         this.saveQuestionsUser();
-        this.preguntasJugables = 0;
     }
 
 
@@ -27,7 +26,7 @@ class PantallaInicio {
 
         this.formularioPreguntas = document.createElement("form");
         this.inputPreguntas = document.createElement("input");
-        this.inputPreguntas.setAttribute("id", "preguntas")
+        this.inputPreguntas.setAttribute("id", "input-preguntas")
 
         this.buttonQuestionNumbers = document.createElement("input");
         this.buttonQuestionNumbers.setAttribute("type", "submit")
@@ -40,8 +39,6 @@ class PantallaInicio {
 
         this.formularioPreguntas.append(this.inputPreguntas, this.buttonQuestionNumbers, this.buttonStart)
 
-
-
         this.containerStart = document.createElement("main")
         this.containerStart.setAttribute("id", "container")
         this.containerStart.append(this.logoJuego, this.tituloJuego, this.instrucciones, this.preguntasAJugar, this.formularioPreguntas, this.formularioPreguntas, this.buttonStart)
@@ -49,48 +46,13 @@ class PantallaInicio {
         document.body.appendChild(this.containerStart);
     }
 
-    // introElements () {
 
     saveQuestionsUser() {
         this.buttonQuestionNumbers.addEventListener("click", handleButtonSubmit)
 
     }
 
-
 }
 
 
-
-
-function handleButtonSubmit() {
-    const preguntasElegidas = document.querySelector("#preguntas").value
-    const answerToNumber = parseInt(preguntasElegidas);
-
-    if (isNaN(answerToNumber)) {
-
-        console.log("hola")
-        alert("Debes introducir un número")
-        start.buttonStart.className("inactiveLink")
-        // buttonStart.addEventListener("click", prevent)
-
-    } else {
-        start.preguntasJugables = answerToNumber;
-        alert("Número introducido correcto. Pulsa comenzar para comenzar con el número de preguntas introducidos " + start.preguntasJugables)
-        start.buttonStart.classList.remove("inactiveLink")
-        // buttonStart.removeEventListener("click", prevent);
-        // buttonQuestionNumbers.addEventListener("click", handleButtonStart)
-        console.log(start)
-    }
-
-}
-
-function handleButtonStart () {
-    body.remove(start.containerStart)
-
-}
-
-function prevent(e) {
-    e.preventDefault();
-
-}
 
