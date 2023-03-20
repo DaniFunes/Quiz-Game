@@ -3,19 +3,20 @@ class Juego {
         this.pantallaInicio = new PantallaInicio();
         this.preguntasJugables = 0;
         this.puntosTotal = 0;
+        this.tiempoTotal = 0;
     }
 
-    iniciaJuego () {
+    iniciaJuego() {
         this.contadorTiempo = 0;
-        // const IDtiempoIniciado = this.cuentaTiempo();
     }
 
-    iniciaPreguntas () {
+    iniciaPreguntas() {
         this.pantallaPreguntas = new Pregunta(this.preguntasJugables)
-        console.log(this.pantallaPreguntas)
     }
 
+    iniciaPantallaFinal() {
+        this.pantallaFinal = new PantallaFinal(juego.pantallaPreguntas, this.puntosTotal, this.tiempoTotal)
+    }
 
-    
 
 }

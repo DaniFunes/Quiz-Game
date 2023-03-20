@@ -17,7 +17,7 @@ class PantallaInicio {
         document.body.appendChild(this.tituloJuego)
 
         this.instrucciones = document.createElement("p")
-        this.instrucciones.innerText = "Responde correctamente todas las preguntas para ganar el máximo de puntos posibles"
+        this.instrucciones.innerText = "Responde correctamente todas las preguntas para ganar el máximo de puntos posibles, por cada respuesta correcta obtendrás 10 puntos, y 0 si fallas. Solo puedes seleccionar una vez la respuesta, presta atención a las opciones antes de marcar."
         document.body.appendChild(this.instrucciones)
 
         this.preguntasAJugar = document.createElement("h2")
@@ -30,6 +30,7 @@ class PantallaInicio {
 
         this.buttonQuestionNumbers = document.createElement("input");
         this.buttonQuestionNumbers.setAttribute("type", "submit")
+        this.buttonQuestionNumbers.setAttribute("value", "Enviar")
         this.buttonQuestionNumbers.setAttribute("id", "submit")
 
         this.buttonStart = document.createElement("button");
